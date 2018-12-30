@@ -28,6 +28,12 @@ app.prepare().then(async () => {
 
   server.route({
     method: 'GET',
+    path: '/App',
+    handler: pathWrapper(app, '/App')
+  })
+
+  server.route({
+    method: 'GET',
     path: '/_next/{p*}' /* next specific routes */,
     handler: nextHandlerWrapper(app)
   })
