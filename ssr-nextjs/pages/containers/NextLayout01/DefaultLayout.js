@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+// import { Redirect, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
 
 import {
@@ -39,7 +39,7 @@ class DefaultLayout extends Component {
     return (
       <div className="app">
         <AppHeader fixed>
-          <div  fallback={this.loading()}>
+          <div fallback={this.loading()}>
             <DefaultHeader onLogout={e=>this.signOut(e)}/>
           </div>
         </AppHeader>
@@ -57,7 +57,7 @@ class DefaultLayout extends Component {
             <AppBreadcrumb appRoutes={routes}/>
             <Container fluid>
               <div fallback={this.loading()}>
-                <Switch>
+                {/* <Switch>
                   {routes.map((route, idx) => {
                     return route.component ? (
                       <Route
@@ -71,7 +71,7 @@ class DefaultLayout extends Component {
                     ) : (null);
                   })}
                   <Redirect from="/" to="/dashboard" />
-                </Switch>
+                </Switch> */}
               </div>
             </Container>
           </main>

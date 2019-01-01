@@ -1,4 +1,4 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { Component, lazy } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
 import {
   Badge,
@@ -23,7 +23,9 @@ import {
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities'
 
-const Widget03 = lazy(() => import('../../views/Widgets/Widget03'));
+// const Widget03 = lazy(() => import('../../views/Widgets/Widget03'));
+// const Widget03 = import('../../views/Widgets/Widget03');
+import Widget03 from '../../views/Widgets/Widget03';
 
 const brandPrimary = getStyle('--primary')
 const brandSuccess = getStyle('--success')
@@ -637,7 +639,7 @@ class Dashboard extends Component {
             </Card>
           </Col>
         </Row>
-
+{/* 
         <Row>
           <Col xs="6" sm="6" lg="3">
             <Suspense fallback={this.loading()}>
@@ -678,7 +680,7 @@ class Dashboard extends Component {
               </Widget03>
             </Suspense>
           </Col>
-        </Row>
+        </Row> */}
 
         <Row>
           <Col>

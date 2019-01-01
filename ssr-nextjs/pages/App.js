@@ -1,19 +1,28 @@
-import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import React, {
+    Component
+} from 'react';
+import {
+    HashRouter,
+    Route,
+    Switch
+} from 'react-router-dom';
 // import { renderRoutes } from 'react-router-config';
 import Loadable from 'react-loadable';
 import './App.scss';
 
-const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
+const loading = () => <div className="animated fadeIn pt-3 text-center"> Loading...</div>;
+
+// import DefaultLayout from './containers/DefaultLayout';
+import DefaultLayout from './containers/NextLayout01';
 
 // Containers
 // const DefaultLayout = Loadable({
-//   loader: () => import('./containers/DefaultLayout'),
-//   loading
+//     loader: () => import('./containers/DefaultLayout'),
+//     loading
 // });
 
-const App = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
-
+// const App = () => <div className="example">hello</div>;
+const App = () => <DefaultLayout />
 
 // Pages
 // const Login = Loadable({
@@ -37,7 +46,6 @@ const App = () => <div className="animated fadeIn pt-3 text-center">Loading...</
 // });
 
 // class App extends Component {
-
 //   render() {
 //     return (
 //       <HashRouter>
