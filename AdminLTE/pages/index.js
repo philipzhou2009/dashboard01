@@ -1,0 +1,1 @@
+export default () => (<h1>Hello next.js</h1>);
