@@ -1,40 +1,58 @@
 // https://medium.com/@notrab/using-create-react-app-with-hapi-js-8f4ef3dcd311
-const Hapi = require('hapi')
-const Path = require('path')
+'use strict';
 
-const server = new Hapi.Server()
+const Hapi = require('hapi');
+const Path = require('path');
 
-const plugins = [
-    require('inert')
-]
+const server = Hapi.server({
+  port: 3000,
+  host: 'localhost'
+});
 
-server.register(plugins, err => {
-    if (err) {
-        throw err
+// server.route({
+//   method: 'GET',
+//   path: '/',
+//   handler: (request, h) => {
+//     return 'Hello, world!';
+//   }
+// });
+
+// server.route({
+//   method: 'GET',
+//   path: '/{name}',
+//   handler: (request, h) => {
+//     return 'Hello, ' + encodeURIComponent(request.params.name) + '!';
+//   }
+// });
+
+// const init = async () => {
+//     await server.start();
+//     console.log(`Server running at: ${server.info.uri}`);
+// };
+
+const init = async () => {
+  await server.register(require('inert'));
+
+  server.route({
+    method: 'GET',
+    path: '/{path*}',
+    handler: {
+      directory: {
+        path: Path.join(__dirname, 'build'),
+        listing: false,
+        index: true
+      }
     }
+  });
 
-    server.connection({
-        host: process.env.HOST || 'localhost',
-        port: process.env.PORT || 5000
-    })
+  await server.start();
+  console.log(`Server running at: ${server.info.uri}`);
+};
 
-    server.route({
-        method: 'GET',
-        path: '/{path*}',
-        handler: {
-            directory: {
-                path: Path.join(__dirname, 'build'),
-                listing: false,
-                index: true
-            }
-        }
-    })
+process.on('unhandledRejection', (err) => {
 
-    server.start(err => {
-        if (err) {
-            throw err
-        }
+  console.log(err);
+  process.exit(1);
+});
 
-        console.log(`Server running at ${server.info.uri}`)
-    })
-})
+init();
