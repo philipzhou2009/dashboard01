@@ -8,7 +8,7 @@ const loading = () => <div className="animated fadeIn pt-3 text-center">Loading.
 
 // Containers
 const DefaultLayout = Loadable({
-  loader: () => import('./containers/DefaultLayout'),
+  loader: () => import('./containers'),
   loading
 });
 
