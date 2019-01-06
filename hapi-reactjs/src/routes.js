@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultLayout from './containers/DefaultLayout';
+import DefaultLayout from './containers/Layout01';
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
