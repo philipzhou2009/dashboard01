@@ -25,7 +25,7 @@ class DefaultHeader extends Component {
         <AppSidebarToggler className="d-lg-none" display="md" mobile />
         <AppNavbarBrand
           full={{ src: wirLogo, width: 48, height: 48, alt: 'WIR Logo' }}
-          minimized={{ src: sygnet, width: 30, height: 30, alt: 'WIR Logoo' }}
+          minimized={{ src: sygnet, width: 30, height: 30, alt: 'WIR Logo' }}
         />
         <AppSidebarToggler className="d-md-down-none" display="lg" />
 
