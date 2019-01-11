@@ -24,7 +24,7 @@ const defaultProps = {
   invert: false,
 };
 
-class Widget04 extends Component {
+class PipelineCard extends Component {
   render() {
     const { className, cssModule, header, icon, color, value, children, invert, ...attributes } = this.props;
 
@@ -50,14 +50,14 @@ class Widget04 extends Component {
           </div>
           <div className="h4 mb-0">{header}</div>
           <small className="text-muted text-uppercase font-weight-bold">{children}</small>
-          <Progress className={progress.style} color={progress.color} value={progress.value} />
+          {/* <Progress className={progress.style} color={progress.color} value={progress.value} /> */}
         </CardBody>
       </Card>
     );
   }
 }
 
-Widget04.propTypes = propTypes;
-Widget04.defaultProps = defaultProps;
+PipelineCard.propTypes = propTypes;
+PipelineCard.defaultProps = defaultProps;
 
-export default Widget04;
+export default PipelineCard;

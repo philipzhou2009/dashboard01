@@ -12,3 +12,26 @@
 
 // ie fixes
 @import "ie-fix";
+
+.div-anim-linear {
+    // animation-timing-function: linear;
+    // animation: 2s anim infinite alternate;
+}
+
+@keyframes anim {
+    to {
+        // color: whitesmoke;
+        // border-color: rgb(117, 209, 63);
+        // border-right-width: 4.8em;
+        // padding-right: .2em;
+    }
+}
+
+// @keyframes anim-half {
+//     50% {
+//         // background-color: #e50000;
+//         // border-color: #75d13f;
+//         // border-right-width: 4.8em;
+//         // padding-right: .2em;
+//     }
+// }

@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import {
   Col,
   Row,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader
 } from 'reactstrap';
-import { Widget04 } from '../Components';
+import { PipelineCard } from '../Components';
 
 class WirMadDash extends Component {
   constructor(props) {
@@ -39,10 +43,30 @@ class WirMadDash extends Component {
 
         <Row>
           <Col sm="6" md="6">
-            <Widget04 icon="icon-speedometer" color="success" header="Frontend" value="25" invert>Frontend</Widget04>
+            <Card>
+              <CardHeader>FRONTEND</CardHeader>
+              <CardBody>
+                <Row>
+                  <Col sm="6" md="6">
+                    <PipelineCard icon="fa fa-gears" color="success" header=" Pipeline" value="25" invert>success</PipelineCard>
+                  </Col>
+                  <Col sm="6" md="6">
+                    <PipelineCard icon="fa fa-gears" color="light" header=" Pipeline" value="25" invert>success</PipelineCard>
+                  </Col>
+                </Row>
+              </CardBody>
+              <CardFooter>End</CardFooter>
+            </Card>
           </Col>
+
           <Col sm="6" md="6">
-            <Widget04 icon="icon-speedometer" color="success" header="Backend" value="25" invert>Backend</Widget04>
+            <Card>
+              <CardHeader>BACKEND</CardHeader>
+              <CardBody>
+                <PipelineCard icon="fa fa-gears" color="success" header=" Pipeline" value="25" invert>success</PipelineCard>
+              </CardBody>
+              <CardFooter>End</CardFooter>
+            </Card>
           </Col>
 
         </Row>

@@ -1,5 +1,5 @@
-import Widget04 from './Widget04';
+import PipelineCard from './PipelineCard';
 
 export {
-  Widget04
+    PipelineCard
 };

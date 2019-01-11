@@ -11,7 +11,8 @@ import PropTypes from 'prop-types';
 import { AppAsideToggler, AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 // import logo from '../../assets/img/brand/logo.svg'
 import sygnet from '../../assets/img/brand/sygnet.svg'
-import wirLogo from '../../assets/img/brand/projectavatar.png'
+import wirLogo0 from '../../assets/img/brand/projectavatar.png'
+import wirLogo from '../../assets/img/Ralph2.png'
 
 const propTypes = {
   children: PropTypes.node,
@@ -29,8 +30,8 @@ class DefaultHeader extends Component {
       <React.Fragment>
         <AppSidebarToggler className="d-lg-none" display="md" mobile />
         <AppNavbarBrand
-          full={{ src: wirLogo, width: 48, height: 48, alt: 'WIR Logo' }}
-          minimized={{ src: sygnet, width: 30, height: 30, alt: 'WIR Logo' }}
+          full={{ src: wirLogo, width: 82, height: 48, alt: 'WIR Logo' }}
+          minimized={{ src: sygnet, width: 70, height: 30, alt: 'WIR Logo' }}
         />
         <AppSidebarToggler className="d-md-down-none" display="lg" />
 
