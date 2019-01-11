@@ -1,5 +1,9 @@
 export default {
-  items: [
+  items: [{
+      name: 'WIR',
+      url: '/wir',
+      icon: 'icon-speedometer',
+    },
     {
       name: 'Dashboard',
       url: '/dashboard',
@@ -8,11 +12,11 @@ export default {
     {
       title: true,
       name: 'Theme',
-      wrapper: {            // optional wrapper object
-        element: '',        // required valid HTML5 element tag
-        attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
+      wrapper: { // optional wrapper object
+        element: '', // required valid HTML5 element tag
+        attributes: {} // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
       },
-      class: ''             // optional class names space delimited list for title item ex: "text-center"
+      class: '' // optional class names space delimited list for title item ex: "text-center"
     },
     {
       name: 'Colors',
@@ -36,8 +40,7 @@ export default {
       name: 'Base',
       url: '/base',
       icon: 'icon-puzzle',
-      children: [
-        {
+      children: [{
           name: 'Breadcrumbs',
           url: '/base/breadcrumbs',
           icon: 'icon-puzzle',
@@ -123,8 +126,7 @@ export default {
       name: 'Buttons',
       url: '/buttons',
       icon: 'icon-cursor',
-      children: [
-        {
+      children: [{
           name: 'Buttons',
           url: '/buttons/buttons',
           icon: 'icon-cursor',
@@ -155,8 +157,7 @@ export default {
       name: 'Icons',
       url: '/icons',
       icon: 'icon-star',
-      children: [
-        {
+      children: [{
           name: 'CoreUI Icons',
           url: '/icons/coreui-icons',
           icon: 'icon-star',
@@ -190,8 +191,7 @@ export default {
       name: 'Notifications',
       url: '/notifications',
       icon: 'icon-bell',
-      children: [
-        {
+      children: [{
           name: 'Alerts',
           url: '/notifications/alerts',
           icon: 'icon-bell',
@@ -211,11 +211,7 @@ export default {
     {
       name: 'Widgets',
       url: '/widgets',
-      icon: 'icon-calculator',
-      badge: {
-        variant: 'info',
-        text: 'NEW',
-      },
+      icon: 'icon-calculator'
     },
     {
       divider: true,
@@ -228,8 +224,7 @@ export default {
       name: 'Pages',
       url: '/pages',
       icon: 'icon-star',
-      children: [
-        {
+      children: [{
           name: 'Login',
           url: '/login',
           icon: 'icon-star',
@@ -255,7 +250,9 @@ export default {
       name: 'Disabled',
       url: '/dashboard',
       icon: 'icon-ban',
-      attributes: { disabled: true },
+      attributes: {
+        disabled: true
+      },
     }
   ],
 };
