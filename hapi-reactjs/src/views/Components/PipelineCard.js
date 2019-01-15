@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardBody, Progress } from 'reactstrap';
+import {
+  Card,
+  CardBody,
+} from 'reactstrap';
 import classNames from 'classnames';
 import { mapToCssModules } from 'reactstrap/lib/utils';
 
@@ -25,32 +28,82 @@ const defaultProps = {
 };
 
 class PipelineCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { bgColor: 'white', status: 'unknown' };
+  }
+
+  async fetchCodeBuildResult() {
+    const result = await fetch('http://localhost:3001/codebuild')
+      .then(res => res.json());
+
+    console.log(result);
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount');
+    this.fetchCodeBuildResult();
+
+    // fetch("https://localhost:3001/codebuild")
+    //   .then(res => res.json())
+    //   .then(
+    //     (result) => {
+    //       this.setState({
+    //         isLoaded: true,
+    //         items: result.items
+    //       });
+    //     },
+    //     // Note: it's important to handle errors here
+    //     // instead of a catch() block so that we don't swallow
+    //     // exceptions from actual bugs in components.
+    //     (error) => {
+    //       this.setState({
+    //         isLoaded: true,
+    //         error
+    //       });
+    //     }
+    //   )
+  }
+
+  // updateStatus(s) {
+
+  // }
+
   render() {
-    const { className, cssModule, header, icon, color, value, children, invert, ...attributes } = this.props;
+    const {
+      className, cssModule, header, icon, value, children, invert, ...attributes
+    } = this.props;
 
-    // demo purposes only
-    const progress = { style: '', color: color, value: value };
-    const card = { style: '', bgColor: '', icon: icon };
+    const card = { style: '', bgColor: '', icon };
 
-    if (invert) {
-      progress.style = 'progress-white';
-      progress.color = '';
-      card.style = 'text-white';
-      card.bgColor = 'bg-' + color;
-    }
+    // if (invert) {
+    //   card.style = 'text-white';
+    //   card.bgColor = 'bg-' + color;
+    // }
+
+
+    // switch(this.state.status) {
+    //   case 'unknown':
+    //   this.s
+    //     break;
+    //   case y:
+    //     // code block
+    //     break;
+    //   default:
+    //     // code block
+    // }
+
 
     const classes = mapToCssModules(classNames(className, card.style, card.bgColor), cssModule);
-    progress.style = classNames('progress-xs mt-3 mb-0', progress.style);
 
     return (
       <Card className={classes} {...attributes}>
         <CardBody>
           <div className="h1 text-muted text-right mb-2">
-            <i className={card.icon}></i>
+            <i className={card.icon} />
           </div>
           <div className="h4 mb-0">{header}</div>
           <small className="text-muted text-uppercase font-weight-bold">{children}</small>
-          {/* <Progress className={progress.style} color={progress.color} value={progress.value} /> */}
         </CardBody>
       </Card>
     );

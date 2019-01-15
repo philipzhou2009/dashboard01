@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardBody, Progress } from 'reactstrap';
+import { Card, CardBody } from 'reactstrap';
 import classNames from 'classnames';
 import { mapToCssModules } from 'reactstrap/lib/utils';
 
@@ -24,7 +24,7 @@ const defaultProps = {
   invert: false,
 };
 
-class PipelineCard extends Component {
+class PipelineHistory extends Component {
   render() {
     const { className, cssModule, header, icon, color, value, children, invert, ...attributes } = this.props;
 
@@ -57,7 +57,7 @@ class PipelineCard extends Component {
   }
 }
 
-PipelineCard.propTypes = propTypes;
-PipelineCard.defaultProps = defaultProps;
+PipelineHistory.propTypes = propTypes;
+PipelineHistory.defaultProps = defaultProps;
 
-export default PipelineCard;
+export default PipelineHistory;
