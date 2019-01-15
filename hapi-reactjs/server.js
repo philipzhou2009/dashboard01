@@ -1,12 +1,15 @@
 // https://medium.com/@notrab/using-create-react-app-with-hapi-js-8f4ef3dcd311
-'use strict';
-
 const Hapi = require('hapi');
 const Path = require('path');
+const Inert = require('inert');
+const CodeBuild = require('./aws/codebuild');
 
 const server = Hapi.server({
-  port: 3000,
-  host: 'localhost'
+  port: 3001,
+  host: 'localhost',
+  routes: {
+    cors: true,
+  },
 });
 
 // server.route({
@@ -31,7 +34,7 @@ const server = Hapi.server({
 // };
 
 const init = async () => {
-  await server.register(require('inert'));
+  await server.register(Inert);
 
   server.route({
     method: 'GET',
@@ -40,9 +43,21 @@ const init = async () => {
       directory: {
         path: Path.join(__dirname, 'build'),
         listing: false,
-        index: true
-      }
-    }
+        index: true,
+      },
+    },
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/codebuild',
+    handler: async (request, h) => {
+      console.log('calling codeBuildService');
+      const codeBuildService = new CodeBuild.CodeBuildService();
+      const buildData = await codeBuildService.getLatestBuildData();
+      const buildResult = codeBuildService.getBuildResult(buildData);
+      return buildResult;
+    },
   });
 
   await server.start();
@@ -50,7 +65,6 @@ const init = async () => {
 };
 
 process.on('unhandledRejection', (err) => {
-
   console.log(err);
   process.exit(1);
 });
