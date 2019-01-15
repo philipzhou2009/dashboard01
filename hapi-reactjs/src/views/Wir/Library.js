@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader
 } from 'reactstrap';
-import { PipelineCard, PipelineHistory } from '../Components';
+import { RadioSwitchTypeI } from '../Components';
 
 class WirMadDash extends Component {
   constructor(props) {
@@ -44,14 +44,11 @@ class WirMadDash extends Component {
         <Row>
           <Col sm="6" md="6">
             <Card>
-              <CardHeader>FRONTEND</CardHeader>
+              <CardHeader>RadioSwitchTypeI</CardHeader>
               <CardBody>
                 <Row>
                   <Col sm="6" md="6">
-                    <PipelineCard icon="fa fa-gears" color="success" header="Pipeline" value="25" invert>success</PipelineCard>
-                  </Col>
-                  <Col sm="6" md="6">
-                    <PipelineHistory icon="fa fa-gears" color="light" header="Pipeline History" value="25" invert>success</PipelineHistory>
+                    <RadioSwitchTypeI></RadioSwitchTypeI>
                   </Col>
                 </Row>
               </CardBody>
