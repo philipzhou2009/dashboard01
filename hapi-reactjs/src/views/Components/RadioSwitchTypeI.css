@@ -1,0 +1,104 @@
+.help-block {
+  transform-origin: center left;
+}
+
+.message-enter {
+  opacity: 0.01;
+  transform: scale(0.9) translateY(50%);
+}
+
+.message-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0%);
+  transition: all 300ms ease-out;
+}
+
+.message-exit {
+  opacity: 1;
+  transform: scale(1) translateY(0%);
+}
+
+.message-exit-active {
+  opacity: 0.01;
+  transform: scale(0.9) translateY(50%);
+  transition: all 300ms ease-out;
+}
+
+.star {
+  display: inline-block;
+  margin-left: 0.5rem;
+  transform: scale(1.25);
+}
+
+.star-enter {
+  opacity: 0.01;
+  transform: translateY(-100%) scale(0.75);
+}
+
+.star-enter-active {
+  opacity: 1;
+  transform: translateY(0%) scale(1.25);
+  transition: all 300ms ease-out;
+}
+
+.star-exit {
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+.star-exit-active {
+  opacity: 0;
+  transform: scale(4);
+  transition: all 300ms ease-in;
+}
+
+.rs-bg {
+  border-radius: 20px;
+  background-color: cadetblue;
+  position: relative;
+}
+
+.rs-bg-l {
+  position: relative;
+  left: 0.5rem;
+}
+
+.rs-bg-r {
+  position: absolute;
+  right: 0.5rem;
+}
+
+.rs-sw {
+  background-color: #00266b;
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  width: 48%;
+  height: 70%;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 100%;
+  color: white;
+}
+
+.rs-enter {
+  opacity: 0.01;
+  transform: scale(0.9) translateX(50%);
+}
+
+.rs-enter-active {
+  opacity: 1;
+  transform: scale(1) translateX(0%);
+  transition: all 1000ms ease-out;
+}
+
+.rs-exit {
+  opacity: 1;
+  transform: scale(1) translateY(0%);
+}
+
+.rs-exit-active {
+  opacity: 0.01;
+  transform: scale(0.9) translateY(50%);
+  transition: all 300ms ease-out;
+}
